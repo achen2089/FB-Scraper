@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+	<h1>Facebook Page Data Analysis</h1>
+	<img src="{{url_for('static', filename='fb.png')}}" class="center" />
+
+	<form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.date.label }}<br>
+            {{ form.date(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+
+{% endblock %}
