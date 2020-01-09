@@ -7,14 +7,21 @@ import sys
 from flask import render_template, flash, redirect
 from app.forms import LoginForm
 import matplotlib.pyplot as plt
+import time
+from app.FB_scrape import scrape 
 
 
 
 
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET','POST'])
+
 def index():
     form = LoginForm()
-    user = {'username': 'Christian'}
-    return render_template('index.html', title='Home', user=user, form=form)
+    if form.validate_on_submit():
+    	info = form.date.data
+    	scrape(info)
+    	time.sleep(1)
+    	return render_template('FB_result.html', info = info)
+
+    return render_template('index.html', title='Home', form=form)

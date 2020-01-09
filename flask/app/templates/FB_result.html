@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>The message is the following</h1>
+
+
+	<h3>{{info}}</h3>
+
+
+	<img src="{{url_for('static', filename='images/comments_shares.jpg')}}" class="center" />
+
+	<img src="{{url_for('static', filename='images/ex2.png')}}" class="center" />
+
+	<img src="{{url_for('static', filename='images/ex3.jpg')}}" class="center" />
+
+
+{% endblock %}
