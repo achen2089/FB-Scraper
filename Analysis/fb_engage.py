@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import Chrome
 import selenium
 import time
-import matplotlib.pyplot as plt
+
 
 import pandas as pd
 import time
@@ -34,6 +34,18 @@ def scrape_FB(url):
     comments = []
     date = []
     shares = []
+    def getMonth(s):
+        return int(s.split("/")[0])
+
+    def getDay(s):
+        return int(s.split("/")[1])
+
+    def getYear(s):
+        return int(s.split("/")[2].split(",")[0])
+
+    def getYearMonth(s):
+        return int(s.split("/")[0]+"/"+s.split("/")[2])
+
 
     for elem in lists:
         link= elem.find_element_by_class_name("_5pcq").get_attribute("href")
@@ -78,7 +90,15 @@ def scrape_FB(url):
             shares.append("0 Shares")
 
     df = pd.DataFrame({"date":date,"content_type":content_type, "likes":likes, "comments":comments, "shares":shares})
-    #df.to_csv("SCU_FB.csv")
+    # df.to_csv("SCU_FB.csv")
+
+    df['month'] = df['date'].apply(lambda x : getMonth(x))
+    df['day'] = df['date'].apply(lambda x : getDay(x))
+    df['year'] = df['date'].apply(lambda x : getYear(x))
+    del df['date']
+    df['comments'] = df['comments'].str.split(" ", n = 1, expand = True)
+    df['shares'] = df['shares'].str.split(" ", n = 1, expand = True)
+    df = df [['month', 'day', 'year', 'content_type', 'likes', 'comments', 'shares']]
     return df
 
 
