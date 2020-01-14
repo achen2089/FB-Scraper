@@ -14,8 +14,7 @@ from app.FB_scrape import scrape
 
 
 
-@app.route('/', methods=['GET','POST'])
-
+@app.route('/single', methods=['GET','POST'])
 def index():
     form = LoginForm()
     if form.validate_on_submit():
@@ -25,3 +24,8 @@ def index():
     	return render_template('FB_result.html', info = info)
 
     return render_template('index.html', title='Home', form=form)
+
+
+@app.route('/', methods=['GET','POST'])
+def home():
+	return render_template('home.html')

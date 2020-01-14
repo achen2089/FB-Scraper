@@ -1,16 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
 
-	<h1>Facebook Page Data Analysis</h1>
-	<img src="{{url_for('static', filename='fb.png')}}" class="center" />
+<div  class = "text-dark">
+    <div id="loading">
+        <div class="container">
+            <div class="text-center">
+                <IMG SRC="{{url_for('static', filename='loading.gif')}}" class = "img-fluid"id = "load-img">
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <h1>Single Account Analysis</h1>
 
-	<form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.date.label }}<br>
-            {{ form.date(size=32) }}
-        </p>
-        <p>{{ form.submit() }}</p>
-    </form>
+        <br>
+
+        <br>
+        
+
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.date.label }}<br>
+                {{ form.date(size=32) }}
+            </p>
+            <div onclick="submit()">
+                <button type=submit class="btn btn-outline-success" >submit
+                </button>
+            </div>
+        </form>
+
+        <br>
+
+        <img src="{{url_for('static', filename='fb.png')}}" class="center" />
+
+
+    </div>
+
+    <p></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</div>
+
+    	
 
 {% endblock %}

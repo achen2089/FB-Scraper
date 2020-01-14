@@ -7,29 +7,68 @@
         {% endif %}
         <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-1.0.4.min.css" type="text/css" />
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
         <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.0.4.min.js"></script>
         <script type="text/javascript">
             Bokeh.set_log_level("info");
         </script> 
 
+        <script type="text/javascript">
+        function submit() {
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("content").style.display = "none";
+            console.log("test");
+        }
+        </script>
+
     </head>
     <body>
-        <div>
+        <!-- top menu -->
+        <!-- <div>
             Comon
             <a href="/">Facebook</a>
             <a href="/activity">Linkedin</a>
             <a href="/graphs">About</a>
-        </div>
+        </div> -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary text-white">
+
+          <a class="navbar-brand" href="/">  Facebook Data Analysis </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto">
+
+              <li class="nav-item active">
+                <a class="nav-link text-white " href="/single">Single Account <span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Multiple Accounts</a>
+              </li>
+
+            </ul>
+
+            <p class="my-2 my-lg-0">Made by Anthony and Christian</p>
+
+
+
+
+
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+            
+          </div>
+        </nav>
+
+
         <hr>
-        {% block content %}{% endblock %}
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
+        <div>
+          {% block content %}{% endblock %}
+        </div>
     </body>
 </html>

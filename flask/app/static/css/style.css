@@ -39,3 +39,46 @@ img.center {
   margin-right: auto;
   height: 60vh;
 }
+
+#load-img {
+  height: 60vh;
+}
+
+
+/*implementing the loading gif*/
+
+div#content {
+    
+}
+
+div#loading {
+    display: none;
+    top: 200 px;
+    margin: auto;
+
+    z-index: 1000;
+    /*background: url("../loading.gif");*/
+    /*cursor: wait;*/
+}
+
+
+.jumbotron {  /*overwritten by default library*/
+    display: block;
+    background-color:#D1C4E9;
+}
+
+.fit-image{
+width: 100%;
+object-fit: cover;
+height: 300px; /* only if you want fixed height */
+}
+
+
+
+
+
+
+
+
+
+

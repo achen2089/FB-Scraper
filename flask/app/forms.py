@@ -3,5 +3,5 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
 
 class LoginForm(FlaskForm):
-    date = StringField('Inout a website for a facbeook page', validators=[DataRequired()])
+    date = StringField('Input a website for a facebook page', validators=[DataRequired()])
     submit = SubmitField('Analyze!!!')

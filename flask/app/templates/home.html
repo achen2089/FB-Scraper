@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <header class="jumbotron bg-primary-color-dark">
+        <div class = "container">
+            <div class="row">
+                <div class = "col-8 text-left">
+                    <h1 class="text-left">Facebook Page Data Analysis</h1>
+                    <br>
+                    <h5 class="text-left">leveraging Python and pandas for in depth analysis of a facebook page</h5>
+                    <h5 class="text-left">Understanding a page using different data, post type breakdown, engagement by month breakdown and etc</h5>
+                    <!-- <ul><h5>list</h5>
+                    </ul>
+                    	<Li>asdsad</Li>
+                    	<Li>asdsad</Li>
+                    	<Li>asdsad</Li>
+                    	<Li>asdsad</Li> -->
+
+                </div>
+                <div class = "col-4 ">
+                    <img src="{{url_for('static', filename='fb.png')}}" class="img-responsive fit-image float-right">
+                </div>
+               
+                    
+            </div>
+        </div>
+    </header>
+{% endblock %}

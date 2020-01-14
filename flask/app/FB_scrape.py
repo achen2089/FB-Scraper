@@ -116,7 +116,7 @@ def scrape(link):
     plt.xlabel("Month", size=15)
     plt.ylabel("Amount", size=15);
 
-    plt.savefig("app/static/images/comments_shares.jpg")
+    plt.savefig("app/static/images/comments_shares.png")
     plt.clf()
 
 
