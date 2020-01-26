@@ -5,24 +5,82 @@
         <div class = "container">
             <div class="row">
                 <div class = "col-8 text-left">
-                    <h1 class="text-left">Facebook Page Data Analysis</h1>
+                    <h1 class="text-left text-dark">Facebook Page Data Analysis</h1>
                     <br>
-                    <h5 class="text-left">leveraging Python and pandas for in depth analysis of a facebook page</h5>
-                    <h5 class="text-left">Understanding a page using different data, post type breakdown, engagement by month breakdown and etc</h5>
-                    <!-- <ul><h5>list</h5>
+                    <h5 class="text-left text-secondary">Leveraging Python for in depth analysis of a facebook page</h5>
+                    <br>
+                    <h5 class="text-secondary">Understanding a page using </h5>
+                    <br>
+                    <ul>
+                    	<Li><h5 class="text-left text-secondary">Post type break down</h5></Li>
+                        <br>
+                    	<Li><h5 class="text-left text-secondary">Engagement by month</h5></Li>
+                    	
                     </ul>
-                    	<Li>asdsad</Li>
-                    	<Li>asdsad</Li>
-                    	<Li>asdsad</Li>
-                    	<Li>asdsad</Li> -->
 
                 </div>
                 <div class = "col-4 ">
                     <img src="{{url_for('static', filename='fb.png')}}" class="img-responsive fit-image float-right">
-                </div>
-               
-                    
+                </div>     
             </div>
+
         </div>
+
     </header>
+
+    <div class="container">
+        <div class="row align-items-center row-content">
+                <div class="media">
+                    
+                    <div class = "col-12 col-sm-4 col-md-3">
+                        <h3>See through the trend</h3>
+                    </div>
+                    <div class="media-body">
+                        <div class = "col col-sm col-md">
+                            <h2>Post Type Breakdown </h2>
+                            <p>Understand what types of posts the account post more, get hints on the next popular format of media. Is it going to be pure text, photo or video? </p>
+                        </div>
+                    </div>
+                    <img class="d-flex mr-3 img-thumbnail align-self-center img-fluid col-3" src = "{{url_for('static', filename='images/ex1.png')}}">
+
+                </div>
+            </div>
+
+            <div class="row align-items-center row-content">
+                <div class="media">
+                    
+                    
+                    <div class = "col-12 col-sm-4 col-md-3">
+                        <h3>Understand your stats</h3>
+                    </div>
+                    <div class="media-body">
+                        <div class = "col col-sm col-md">
+                            <h2>Engagement Rate <span class="badge badge-danger">Hot</span></h2>
+                            <p>Compare your page to another brand's page and see who does it better. Understand the competition using the amount of likes, comments and shares received </p>
+                        </div>
+                    </div>
+                    <img class="d-flex mr-3 img-thumbnail align-self-center img-fluid col-3" src = "{{url_for('static', filename='images/ex2.png')}}">
+
+                </div>
+            </div>
+
+            <div class="row align-items-center row-content">
+                <div class="media">
+                    
+                    
+                    <div class = "col-12 col-sm-4 col-md-3">
+                        <h3>Compete with other brands</h3>
+                    </div>
+                    <div class="media-body">
+                        <div class = "col col-sm col-md">
+                            <h2>Data Comparision <span class="badge badge-primary">New</span></h2>
+                            <p>Compare your page to another brand's page and see who does it better. Understand the competition using the amount of likes, comments and shares received </p>
+                        </div>
+                    </div>
+                    <img class="d-flex mr-3 img-thumbnail align-self-center img-fluid col-3" src = "{{url_for('static', filename='images/ex3.png')}}">
+
+                </div>
+            </div>
+
+    </div>
 {% endblock %}

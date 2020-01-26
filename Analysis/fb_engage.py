@@ -95,10 +95,10 @@ def scrape_FB(url):
     df['month'] = df['date'].apply(lambda x : getMonth(x))
     df['day'] = df['date'].apply(lambda x : getDay(x))
     df['year'] = df['date'].apply(lambda x : getYear(x))
-    del df['date']
+    
     df['comments'] = df['comments'].str.split(" ", n = 1, expand = True)
     df['shares'] = df['shares'].str.split(" ", n = 1, expand = True)
-    df = df [['month', 'day', 'year', 'content_type', 'likes', 'comments', 'shares']]
+    df = df [['month', 'day', 'year', 'content_type', 'likes', 'comments', 'shares', 'date']]
     return df
 
 

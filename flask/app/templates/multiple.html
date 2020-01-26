@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div  class = "text-dark">
+    <div id="loading">
+        <div class="container">
+            <div class="text-center">
+                <IMG SRC="{{url_for('static', filename='loading.gif')}}" class = "img-fluid"id = "load-img">
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <h1>Multiple Account Comparison</h1>
+
+        <br>
+
+        <br>
+        
+
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                
+                {{ form.date(size=32) }}<br>
+                <br>
+                {{ form.date(size=32) }}<br>
+                <br>
+                {{ form.date(size=32) }}<br>
+            </p>
+            <div onclick="submit()">
+                <button type=submit class="btn btn-outline-success" >submit
+                </button>
+            </div>
+        </form>
+
+        <br>
+
+        <img src="{{url_for('static', filename='fb.png')}}" class="center" />
+
+
+    </div>
+
+    <p></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</div>
+
+    	
+
+{% endblock %}

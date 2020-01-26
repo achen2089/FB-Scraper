@@ -3,11 +3,12 @@
 {% block content %}
 
 
-	<h1>The message is the following</h1>
-	<h3>{{info}}</h3>
+	<h1 class="text-dark">Data result for</h1>
+	<h3 class="text-secondary">{{info}}</h3>
+	<img src="{{url_for('static', filename='images/likes.png')}}" class="center" />
 	<img src="{{url_for('static', filename='images/comments_shares.png')}}" class="center" />
-	<img src="{{url_for('static', filename='images/ex2.png')}}" class="center" />
-	<img src="{{url_for('static', filename='images/ex3.jpg')}}" class="center" />
+	<img src="{{url_for('static', filename='images/post_type_breakdown.png')}}" class="center" />
+	
 	
 
 

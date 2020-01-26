@@ -26,6 +26,17 @@ def index():
     return render_template('index.html', title='Home', form=form)
 
 
+@app.route('/multiple', methods=['GET','POST'])
+def multiple():
+    form = LoginForm()
+    if form.validate_on_submit():
+    	info = form.date.data
+    	scrape(info)
+    	time.sleep(1)
+    	return render_template('FB_result.html', info = info)
+
+    return render_template('multiple.html', title='Home', form=form)
+
 @app.route('/', methods=['GET','POST'])
 def home():
 	return render_template('home.html')
